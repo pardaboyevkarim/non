@@ -4,10 +4,11 @@ let elResultt = document.querySelector(".resultt");
 let elbtrest = document.querySelector(".resett");
 let elSelect = document.querySelector(".select");
 
-elInputOne.addEventListener("keyup", function () {
+function getFetch() {
   let x = +elSelect.value;
   let a = +elInputOne.value;
   let b = a / x;
+
   if (x == 12500) {
     elResultt.textContent = a + ": SO'M";
     elResult.textContent = b.toFixed(2) + ": EN ";
@@ -18,9 +19,12 @@ elInputOne.addEventListener("keyup", function () {
     elResultt.textContent = a + ": SO'M";
     elResult.textContent = b.toFixed(2) + ": RU ";
   }
-});
+}
+
+elInputOne.addEventListener("keyup", getFetch);
+elSelect.addEventListener("change", getFetch);
+
 elbtrest.addEventListener("click", function () {
   elResult.textContent = 0;
   elResultt.textContent = 0;
 });
-elSelect.addEventListener("change", function () {});
